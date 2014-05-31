@@ -29,16 +29,18 @@ gem "haml-rails"
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 
+# log
+gem 'awesome_print'
+gem 'tapp'
+
 group :development do
   gem 'sqlite3'
-  gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'bullet'
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
-  gem 'tapp'
   gem 'letter_opener'
 end
 

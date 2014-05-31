@@ -14,6 +14,12 @@ Rails.application.routes.draw do
       via: [:get, :post]
   end
 
+  resources :hooks do
+    collection do
+      post :jawbone
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
