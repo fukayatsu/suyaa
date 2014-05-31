@@ -9,16 +9,22 @@ class HooksController < ApplicationController
     events.each do |event|
       case event[:type]
       when 'mood'
-        puts "mood changed."
+        tweet_with_time "ふぃー"
       when 'enter_sleep_mode'
-        puts "( ˘ω˘)"
+        tweet_with_time "( ˘ω˘)"
       when 'exit_sleep_mode'
-        puts '(\( ⁰⊖⁰)/)'
+        tweet_with_time '(\( ⁰⊖⁰)/)'
       else
         puts 'unknown event'
         p event
       end
     end
     head(:ok)
+  end
+
+private
+
+  def tweet_with_time(text)
+    TWITTER.update("@tos #{text} [#{Time.now}]")
   end
 end
