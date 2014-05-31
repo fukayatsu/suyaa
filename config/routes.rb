@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#index'
+
+  devise_for :users
+  devise_scope :user do
+    get '/sign_out' => 'devise/sessions#destroy', as: 'sign_out'
+
+    # https://github.com/plataformatec/devise/issues/2692#issuecomment-40877788
+    # FIXME 普通にdevise/omniauth_callbacks#(?-mix:(?!))をusers/omniauth_callbacks#(?-mix:jawbone)にしたい
+    match "/users/auth/:action/callback",
+      constraints: { action: /jawbone/ },
+      to: "users/omniauth_callbacks",
+      as: :fix_user_omniauth_callback,
+      via: [:get, :post]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

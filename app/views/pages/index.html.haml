@@ -1,2 +1,7 @@
 %h1 Pages#index
 %p Find me in app/views/pages/index.html.haml
+
+- if user_signed_in?
+  = link_to 'sign out', sign_out_path
+- else
+  = link_to 'sign in', '/users/auth/jawbone'
