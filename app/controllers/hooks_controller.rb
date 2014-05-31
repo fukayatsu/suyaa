@@ -9,9 +9,9 @@ class HooksController < ApplicationController
     events.each do |event|
       case event[:type]
       when 'mood'
-        tweet_with_time "ふぃー"
+        tweet_with_time 'ふぃー'
       when 'enter_sleep_mode'
-        tweet_with_time "( ˘ω˘)"
+        tweet_with_time "( ˘ω˘)'"
       when 'exit_sleep_mode'
         tweet_with_time '(\( ⁰⊖⁰)/)'
       else
@@ -25,6 +25,6 @@ class HooksController < ApplicationController
 private
 
   def tweet_with_time(text)
-    TWITTER.update("@tos #{text} [#{Time.now}]")
+    TWITTER.update("#{text} \n\n[#{Time.now}]")
   end
 end
