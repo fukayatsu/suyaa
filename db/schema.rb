@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531115905) do
+ActiveRecord::Schema.define(version: 20140601004114) do
+
+  create_table "jawbone_events", force: true do |t|
+    t.string   "name"
+    t.string   "last_created_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.integer  "sign_in_count",      default: 0, null: false

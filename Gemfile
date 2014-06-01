@@ -20,6 +20,7 @@ gem 'omniauth-twitter'
 
 # external services
 gem 'twitter'
+gem 'jawbone', github: 'fukayatsu/jawbone-up-api', branch: 'add-bandevents'
 
 # settings
 gem 'figaro'
