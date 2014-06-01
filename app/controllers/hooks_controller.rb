@@ -25,6 +25,6 @@ class HooksController < ApplicationController
 private
 
   def tweet_with_time(text)
-    TWITTER.update("#{text} \n\n[#{Time.now}]")
+    TWITTER.update("@tos #{text} \n\n[#{Time.now}]")
   end
 end
