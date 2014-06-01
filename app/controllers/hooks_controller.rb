@@ -10,9 +10,7 @@ class HooksController < ApplicationController
       case event[:type]
       when 'mood'
         tweet_with_time 'ふぃー'
-      when 'enter_sleep_mode'
-        tweet_with_time "( ˘ω˘)'"
-      when 'exit_sleep_mode'
+      when 'sleep'
         tweet_with_time '(\( ⁰⊖⁰)/)'
       else
         puts 'unknown event'
